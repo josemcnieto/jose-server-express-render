@@ -1,0 +1,13 @@
+{
+  "name": "server-express-render",
+  "version": "1.0.0",
+  "description": "Servidor Express simple con ES modules",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
