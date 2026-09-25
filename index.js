@@ -1,7 +1,19 @@
 import express from "express";
+import cors from "cors";
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+const allowedOrigins = (process.env.CORS_ORIGIN || "*")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+app.use(
+  cors({
+    origin: allowedOrigins.includes("*") ? true : allowedOrigins,
+  })
+);
 
 const books = [
   { id: 1, libro: "Cien años de soledad", autor: "Gabriel García Márquez", editorial: "Sudamericana", anio: 1967 },
